@@ -6,6 +6,7 @@ echo "Deleting venv"
 rm -rf /workspace/venv
 
 echo "Cloning A1111 repo to /workspace"
+mkdir -p /workspace
 cd /workspace
 git clone --depth=1 https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 
@@ -71,7 +72,7 @@ wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f
 echo "Downloading SDXL ControlNet models"
 wget https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_full.safetensors
 wget https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_full.safetensors
-wget https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/twi-adapter_diffusers_xl_openpose.safetensors
+wget https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_diffusers_xl_openpose.safetensors
 
 echo "Downloading Upscalers"
 mkdir -p /workspace/stable-diffusion-webui/models/ESRGAN
